@@ -1,0 +1,22 @@
+body {
+    background: #fff;
+}
+
+.logo {
+    width: 30%;
+}
+
+.navBarText{
+    color: white !important;
+    margin-left: 10%;
+    font-size: 140%;
+}
+
+.backg {
+    background: inherit;
+}
+
+.bigbackgro{
+    background-image: url(/images/pope.jpg);
+    background-repeat: no-repeat;
+}

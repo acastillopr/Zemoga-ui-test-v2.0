@@ -1,0 +1,66 @@
+<div class="col-md-4 mx-auto">
+    <div class="card">
+    <div class="card-header">
+       <h3>New Person</h3> 
+    </div>
+    <div class="card-body">
+     <form action="/person/new-person" method="POST">
+     <div class="form-group">
+        <input type="text" name="name" class="form-control" placeholder="Name"
+        autofocus> 
+     </div>
+     <div class="form-group">
+     <textarea name="description" class="form-control"
+     placeholder="Description"></textarea>   
+     </div>
+      <div class="form-group">
+        <input type="text" name="source" class="form-control" placeholder="Source Link"
+        autofocus> 
+     </div>
+     <div class="form-group">
+              <input
+                type="file"
+                name="imgUrl"
+                id="input-files"
+                class="form-control-file border"
+              />
+            </div>
+     <button class="btn btn-primary btn-block" type="submit">
+         Save
+     </button>
+      <div class="form-group">
+           <hr />
+           <div class="form-group">
+        <div class="col-sm-12">
+          <div class="preview-images"></div>
+        </div>
+      </div>
+    </div>
+     </form>
+    </div>
+</div>
+</div>
+
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        let imagesPreview = function(input, placeToInsertImagePreview) {
+          if (input.files) {
+            let filesAmount = input.files.length;
+            for (i = 0; i < filesAmount; i++) {
+              let reader = new FileReader();
+              reader.onload = function(event) {
+                $($.parseHTML("<img>"))
+                  .attr("src", event.target.result)
+                  .appendTo(placeToInsertImagePreview);
+              };
+              reader.readAsDataURL(input.files[i]);
+            }
+          }
+        };
+        $("#input-files").on("change", function() {
+          imagesPreview(this, "div.preview-images");
+        });
+      });
+    </script>
