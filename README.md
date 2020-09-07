@@ -6,8 +6,8 @@ Prueba de ingreso a Zemoga
 
 ### Prerequisites📋
 
-You need to install a version of mongo DB like https://www.mongodb.com/try/download/community for the DB
-You need to install Node js
+*You need to install a version of mongo DB like https://www.mongodb.com/try/download/community for the DB,
+*You need to install Node js
 
 ### Instalación 🔧
 
